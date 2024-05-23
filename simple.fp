@@ -11,7 +11,12 @@ pipeline "simple" {
         }
     }
 
+    step "transform" "echo2" {
+        value = "Hello World 2"
+    }
+
     output "val" {
         value = step.transform.echo.value
     }
 }
+

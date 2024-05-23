@@ -11,10 +11,6 @@ pipeline "simple" {
         }
     }
 
-    step "transform" "echo2" {
-        value = "Hello World 2"
-    }
-
     step "transform" "echo3" {
         value = "Hello World 3"
     }    

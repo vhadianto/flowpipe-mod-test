@@ -1,6 +1,6 @@
 pipeline "simple" {
     step "transform" "echo" {
-        value = "Hello World"
+        value = "Hello World ${var.my_name}"
 
         output "echo_1" {
             value = "echo 1"

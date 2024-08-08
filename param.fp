@@ -4,9 +4,13 @@ pipeline "simple_with_param" {
         default = "default"
     }
 
+    param "name" {
+        default = "kenny"
+    }    
+
 
     step "transform" "echo" {
-        value = "Hello World: ${param.notifier}"
+        value = "Hello World: ${param.notifier} & ${param.name}"
 
         output "echo_1" {
             value = "echo 1"

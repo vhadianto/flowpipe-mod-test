@@ -27,3 +27,12 @@ variable "var_map" {
         key2 = "value2"
     }
 }
+
+variable "var_map_number" {
+    type = map(number)
+    default = {
+        key1 = 1
+        key2 = 2
+    }
+}
+ 

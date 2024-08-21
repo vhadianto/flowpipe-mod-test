@@ -1,4 +1,6 @@
 pipeline "simple" {
+    description = "A simple pipeline with my name: ${var.my_name}"
+
     step "transform" "echo" {
         value = "Hello World ${var.my_name}"
 

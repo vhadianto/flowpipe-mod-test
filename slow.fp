@@ -5,7 +5,6 @@ pipeline "slow" {
         loop {
             until = loop.index > 10
         }
-
     }
 
     output "val" {

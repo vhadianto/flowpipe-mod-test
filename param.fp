@@ -1,5 +1,7 @@
 pipeline "simple_with_param" {
 
+    title = "Simple with Param"
+    
     param "notifier" {
         default = "default"
     }

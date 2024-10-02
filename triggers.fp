@@ -11,6 +11,8 @@ trigger "schedule" "my_daily_trigger" {
 }
 
 pipeline "echo" {
+    title = "Echo"
+    
     step "transform" "echo" {
         value = "Hello World"
     }

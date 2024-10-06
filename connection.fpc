@@ -5,3 +5,4 @@ connection "steampipe" "default" {
 connection "steampipe" "one" {
   connection_string = "one_conn_string"
 }
+

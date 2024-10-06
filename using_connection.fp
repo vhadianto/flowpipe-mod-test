@@ -24,3 +24,19 @@ pipeline "steampipe_conn_with_param" {
         value = step.transform.one.value
     }
 }
+
+pipeline "aws_conn_with_param" {
+
+    param "conn_name" {
+        type = connection.aws
+        default = connection.aws.default
+    }
+
+    step "transform" "one" {
+        value = param.conn_name.access_key
+    }
+
+    output "val" {
+        value = step.transform.one.value
+    }
+}

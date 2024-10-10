@@ -1,7 +1,3 @@
-connection "steampipe" "default" {
-  connection_string = "default_conn_string"
-}
-
 connection "steampipe" "one" {
   connection_string = "one_conn_string"
 }

@@ -5,10 +5,6 @@ pipeline "query_steampipe"{
         sql = "select * from aws_s3_bucket"
     }
 
-    step "sleep" "sleep" {
-        duration = "120s"
-    }
-
     output "s3" {
         value = step.query.s3
     }

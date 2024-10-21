@@ -14,8 +14,3 @@ mod "flowpipe_mod_test" {
         "Flowpipe"
     ]
 }
-
-param "bad_mod" {
-    type = string
-    default = "github.com/vhadianto/flowpipe-mod-fire"
-}

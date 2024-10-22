@@ -75,6 +75,64 @@ trigger "query" "with_delay" {
   }
 }
 
+
+trigger "query" "with_delay_and_sleep" {
+  title = "With Delay and Sleep"
+
+  enabled  = true
+  database = connection.steampipe.default
+  sql      = local.query
+
+  capture "insert" {
+    pipeline = pipeline.get_input_with_sleep
+    args = {
+      items = self.inserted_rows
+    }
+  }
+}
+
+
+pipeline "get_input_with_sleep" {
+  title = "Get Input"
+
+  param "items" {
+    type = list(object({
+      name        = string
+      arn         = string
+      region      = string
+      account_id  = string
+    }))
+  }
+
+  param "notifier" {
+    type = notifier
+    default = var.notifier
+  }
+
+  step "transform" "build_string" {
+    value = "${length(param.items)} items: ${join(", ", [for item in param.items : item.name])}"
+  }
+
+  step "sleep" "sleep" {
+    duration = "5m"
+  }
+  
+  step "input" "delay" {
+    type   = "button"
+    prompt = "This is a delay for purposes of pausing pipeline; respond after it's paused to attempt to resume."
+
+    notifier = param.notifier
+
+    option "Continue" {}
+    option "Yes" {}
+  }
+
+  step "transform" "do_nothing" {
+    value = "${step.input.delay.value}"
+  }
+}
+
+
 pipeline "get_input" {
   title = "Get Input"
 

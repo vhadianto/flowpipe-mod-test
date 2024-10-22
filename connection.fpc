@@ -3,4 +3,3 @@ connection "steampipe" "one" {
   port = 9193
   username = "steampipe"
 }
-

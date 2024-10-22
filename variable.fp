@@ -48,3 +48,13 @@ variable "notifier" {
   description = "The notifier to use."
   default = notifier.default
 }
+
+variable "aws_conn" {
+  type = connection.aws
+  default = connection.aws.default
+}
+
+variable "my_conn" {
+  type = connection.steampipe
+  default = connection.steampipe.default
+}

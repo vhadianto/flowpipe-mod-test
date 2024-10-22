@@ -5,6 +5,16 @@ pipeline "investigate_connection" {
         default = connection.steampipe.default
     }
 
+    param "steampipe_conn_from_var" {
+        type = connection.steampipe
+        default = var.my_conn
+    }
+
+    param "aws_conn_from_var" {
+        type = connection.aws
+        default = var.aws_conn
+    }
+
     param "aws_conn_1" {
         type = connection.aws
         default = connection.aws.default
@@ -19,6 +29,14 @@ pipeline "investigate_connection" {
         duration = "10m"
     }
 
+    output "steampipe_conn_from_var" {
+        value = param.steampipe_conn_from_var
+    }
+
+    output "aws_conn_from_var" {
+        value = param.aws_conn_from_var
+    }
+    
     output "steampipe_conn" {
         value = param.steampipe_conn
     }

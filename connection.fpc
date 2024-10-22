@@ -1,4 +1,6 @@
 connection "steampipe" "one" {
-  connection_string = "one_conn_string"
+  host = "localhost"
+  port = 9193
+  username = "steampipe"
 }
 

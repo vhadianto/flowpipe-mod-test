@@ -93,7 +93,7 @@ trigger "query" "with_delay_and_sleep" {
 
 
 pipeline "get_input_with_sleep" {
-  title = "Get Input"
+  title = "Get Input With Sleep"
 
   param "items" {
     type = list(object({
@@ -116,7 +116,7 @@ pipeline "get_input_with_sleep" {
   step "sleep" "sleep" {
     duration = "5m"
   }
-  
+
   step "input" "delay" {
     type   = "button"
     prompt = "This is a delay for purposes of pausing pipeline; respond after it's paused to attempt to resume."
@@ -134,7 +134,7 @@ pipeline "get_input_with_sleep" {
 
 
 pipeline "get_input" {
-  title = "Get Input"
+  title = "Get Input Without Sleep"
 
   param "items" {
     type = list(object({

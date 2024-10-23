@@ -1,3 +1,24 @@
+variable "default_connection" {
+  type = connection
+  default = connection.steampipe.default
+}
+
+variable "default_connection_list" {
+  type = list(connection)
+  default = [connection.steampipe.default]
+}
+
+variable "default_notifier" {
+  type = notifier
+  default = notifier.default 
+}
+
+variable "approvers" {
+  type        = list(notifier)
+  description = "List of notifiers to be used for obtaining action/approval decisions, when empty list will perform the default response associated with the detection."
+  default     = [notifier.default]
+}
+
 variable "my_name" {
   type = string
   default = "flowpipe"
@@ -14,10 +35,22 @@ variable "mandatory_tag_keys" {
   default     = ["Environment", "Owner"]
 }
 
-
 variable "var_number" {
   type        = number
   default = 42
+}
+
+variable "var_list_of_string" {
+    type = list(string)
+    default = ["value1", "value2"]
+}
+
+variable "var_map_of_string" {
+    type = map(string)
+    default = {
+        key1 = "value1"
+        key2 = "value2"
+    }
 }
 
 variable "var_map" {

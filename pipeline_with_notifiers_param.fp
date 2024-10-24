@@ -35,27 +35,13 @@ pipeline "with_notifiers_in_param" {
         default = var.default_connection
     }
 
-    output "notifier_from_var" {
-        value = param.notifier_from_var
+    step "transform" "params" {
+        for_each = param
+
+        value = each.value
     }
 
-    output "notifier_in_pipeline" {
-        value = param.notifier_in_pipeline
-    }
-
-    output "approvers_from_var" {
-        value = param.approvers_from_var
-    }
-
-    output "approvers_in_pipeline" {
-        value = param.approvers_in_pipeline
-    }
-
-    output "default_connection_list_from_var" {
-        value = param.default_connection_list_from_var
-    }
-
-    output "default_connection_list_in_pipeline" {
-        value = param.default_connection_list_in_pipeline
+    output "val" {
+        value = step.transform
     }
 }

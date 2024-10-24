@@ -50,7 +50,7 @@ pipeline "input_step_child_with_no_sleep" {
 
     step "input" "my_step" {
         type   = "button"
-        prompt = "Do you want to approve?"
+        prompt = "input_step_child_with_no_sleep: Do you want to approve?"
 
         option "Approve" {}
         option "Deny" {}

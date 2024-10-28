@@ -1,5 +1,5 @@
 trigger "query" "simple" {
-    title = "Simple Query Trigger"
+    title = "Simple Query Trigger (with param)"
 
     schedule = "* * * * *"
 

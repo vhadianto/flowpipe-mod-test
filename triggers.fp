@@ -1,10 +1,14 @@
 trigger "schedule" "my_hourly_trigger" {
+
+    title = "Hourly Trigger - echo pipeline"
     schedule = "hourly"
 
     pipeline = pipeline.echo
 }
 
 trigger "schedule" "my_daily_trigger" {
+    title = "Daily Trigger - echo pipeline"
+    
     schedule = "daily"
 
     pipeline = pipeline.echo

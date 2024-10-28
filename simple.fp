@@ -1,5 +1,5 @@
 pipeline "simple" {
-    title = "Simple"
+    title = "Simple pipeline"
 
     description = "A simple pipeline with my name: ${var.my_name}"
 

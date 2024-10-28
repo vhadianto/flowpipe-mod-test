@@ -8,7 +8,7 @@ trigger "schedule" "my_hourly_trigger" {
 
 trigger "schedule" "my_daily_trigger" {
     title = "Daily Trigger - echo pipeline"
-    
+
     schedule = "daily"
 
     pipeline = pipeline.echo
@@ -23,6 +23,8 @@ pipeline "echo" {
 }
 
 trigger "query" "steampipe_query" {
+    title = "Steampipe Query Trigger"
+
     schedule = "hourly"
 
     database = connection.steampipe.default

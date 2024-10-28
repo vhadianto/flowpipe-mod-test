@@ -1,4 +1,6 @@
 trigger "query" "simple" {
+    title = "Simple Query Trigger"
+
     schedule = "* * * * *"
 
     enabled = false
@@ -6,8 +8,8 @@ trigger "query" "simple" {
     database = param.database_connection
 
     param "database_connection" {
-        type = string
-        default = "postgres://steampipe:@localhost:9193/steampipe"
+        type = connection.steampipe
+        default = connection.steampipe.default
     }
 
     param "sql" {
